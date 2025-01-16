@@ -3,24 +3,32 @@
 #define GLM_FORCE_CTOR_INIT
 #define GLM_FORCE_EXPLICIT_CTOR
 #define GLM_FORCE_INLINE
-
 #define GLM_FORCE_RADIANS
-#define GLM_FORCE_DEPTH_ZERO_TO_ONE
-#define GLM_FORCE_LEFT_HANDED
-//#define GLM_FORCE_RIGHT_HANDED
 
-#define GLM_FORCE_INTRINSICS
+#ifdef MATHG_ENABLE_RIGHT_HANDED
+    #define GLM_FORCE_RIGHT_HANDED
+#else
+    #define GLM_FORCE_LEFT_HANDED
+#endif
+
+#ifdef MATHG_ENABLE_SIMD
+    #define GLM_FORCE_INTRINSICS
+#endif
 
 //#define GLM_FORCE_CXX98
 //#define GLM_FORCE_CXX17
 //#define GLM_FORCE_MESSAGES
 #define GLM_ENABLE_EXPERIMENTAL
 
+#ifdef GLM_FORCE_LEFT_HANDED
+    #define GLM_FORCE_DEPTH_ZERO_TO_ONE
+#endif
+
 #ifdef GLM_FORCE_INTRINSICS
     #undef GLM_FORCE_XYZW_ONLY
     #define GLM_FORCE_ALIGNED
 #else
-    #define GLM_FORCE_PURE
+    //#define GLM_FORCE_PURE
 #endif
 
 #include <glm/glm.hpp>
