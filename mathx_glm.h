@@ -5,13 +5,13 @@
 #define GLM_FORCE_INLINE
 #define GLM_FORCE_RADIANS
 
-#if MATHG_ENABLE_RIGHT_HANDED
+#if MATHX_ENABLE_RIGHT_HANDED
     #define GLM_FORCE_RIGHT_HANDED
 #else
     #define GLM_FORCE_LEFT_HANDED
 #endif
 
-#if MATHG_ENABLE_SIMD
+#if MATHX_ENABLE_SIMD
     #define GLM_FORCE_INTRINSICS
 #endif
 
@@ -36,7 +36,7 @@
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>          // ext, gtc, gtx, etc.
 
-#define MATHG_DEFINE_TYPES(prefix, _comment) \
+#define MATHX_GLM_DEFINE_TYPES(prefix, _comment) \
 using Vector1##prefix = glm::prefix##vec1; \
 using Vector2##prefix = glm::prefix##vec2; \
 using Vector3##prefix = glm::prefix##vec3; \
@@ -51,7 +51,7 @@ using Matrix4x2##prefix = glm::prefix##mat4x2; \
 using Matrix4x3##prefix = glm::prefix##mat4x3; \
 using Matrix4x4##prefix = glm::prefix##mat4x4;
 
-#define MATHG_DEFINE_TYPES_HLSL(suffix, prefix_og) \
+#define MATHX_GLM_DEFINE_TYPES_HLSL(suffix, prefix_og) \
 using Vector1##suffix = glm::prefix_og##1; \
 using Vector2##suffix = glm::prefix_og##2; \
 using Vector3##suffix = glm::prefix_og##3; \
@@ -66,16 +66,16 @@ using Matrix4x2##suffix = glm::prefix_og##4x2; \
 using Matrix4x3##suffix = glm::prefix_og##4x3; \
 using Matrix4x4##suffix = glm::prefix_og##4x4;
 
-MATHG_DEFINE_TYPES(i8, "i8")
-MATHG_DEFINE_TYPES(u8, "u8")
-MATHG_DEFINE_TYPES(u16, "half")
-MATHG_DEFINE_TYPES(u, "uint")
+MATHX_GLM_DEFINE_TYPES(i8, "i8")
+MATHX_GLM_DEFINE_TYPES(u8, "u8")
+MATHX_GLM_DEFINE_TYPES(u16, "half")
+MATHX_GLM_DEFINE_TYPES(u, "uint")
 
-MATHG_DEFINE_TYPES_HLSL(b, bool)
-MATHG_DEFINE_TYPES_HLSL(i, int)
-//MATHG_DEFINE_TYPES_HLSL(u16, half)
-MATHG_DEFINE_TYPES_HLSL(f, float)
-MATHG_DEFINE_TYPES_HLSL(d, double)
+MATHX_GLM_DEFINE_TYPES_HLSL(b, bool)
+MATHX_GLM_DEFINE_TYPES_HLSL(i, int)
+//MATHX_GLM_DEFINE_TYPES_HLSL(u16, half)
+MATHX_GLM_DEFINE_TYPES_HLSL(f, float)
+MATHX_GLM_DEFINE_TYPES_HLSL(d, double)
 
 #if 0
 using Vector2b = glm::bool2;
