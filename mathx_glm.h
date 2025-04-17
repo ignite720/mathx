@@ -15,6 +15,10 @@
     #define GLM_FORCE_INTRINSICS
 #endif
 
+#if MATHX_ENABLE_FORCE_ALIGNED
+    #define GLM_FORCE_ALIGNED
+#endif
+
 //#define GLM_FORCE_CXX98
 //#define GLM_FORCE_CXX11
 //#define GLM_FORCE_CXX14
@@ -28,7 +32,6 @@
 
 #ifdef GLM_FORCE_INTRINSICS
     #undef GLM_FORCE_XYZW_ONLY
-    #define GLM_FORCE_ALIGNED
 #else
     //#define GLM_FORCE_PURE
 #endif
