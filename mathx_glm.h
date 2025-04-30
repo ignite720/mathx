@@ -5,6 +5,10 @@
 #define GLM_FORCE_INLINE
 #define GLM_FORCE_RADIANS
 
+#ifdef _DEBUG
+    #define GLM_FORCE_XYZW_ONLY
+#endif
+
 #if MATHX_ENABLE_RIGHT_HANDED
     #define GLM_FORCE_RIGHT_HANDED
 #else
